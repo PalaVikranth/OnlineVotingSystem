@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cast Vote - Election Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <span>Government of India | Online Voting Portal</span>
+    <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+        <option value="te">తెలుగు</option>
+    </select>
+</div>
+
+<header class="header">
+    <a class="brand" href="dashboard.html">
+        <span class="brand-mark">IN</span>
+        <span><strong>Election Portal</strong><small>Online Voting System</small></span>
+    </a>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="vote.html">Vote</a>
+        <a href="result.html">Results</a>
+        <a href="#" id="logoutButton" class="login-button">Logout</a>
+    </nav>
+</header>
+
+<div class="tricolor-line"></div>
+
+<main class="vote-page">
+
+    <div class="page-title">
+        <span class="eyebrow">CAST YOUR VOTE</span>
+        <h1>Student Council Election</h1>
+        <p>Select a participating party. Click a party card to view its leadership and election history.</p>
+    </div>
+
+    <div class="vote-notice">
+        ⓘ
+        <span><b>Academic Demonstration:</b> This voting page is a student project and does not represent a real election.</span>
+    </div>
+
+    <form id="voteForm">
+        <div class="party-grid">
+
+            <div class="party-card" data-party="bjp">
+                <input type="radio" name="candidate" value="Bharatiya Janata Party">
+                <div class="party-content">
+                    <div class="symbol-box">
+                        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lotus_flower_symbol.svg"
+                             onerror="this.src='images/bjp-symbol.svg'"
+                             alt="BJP Lotus election symbol">
+                    </div>
+                    <div>
+                        <span class="party-type">NATIONAL PARTY</span>
+                        <h2>Bharatiya Janata Party</h2>
+                        <b>BJP</b>
+                        <p>Election Symbol: Lotus</p>
+                    </div>
+                </div>
+                <div class="select-line">Click for party information →</div>
+            </div>
+
+            <div class="party-card" data-party="inc">
+                <input type="radio" name="candidate" value="Indian National Congress">
+                <div class="party-content">
+                    <div class="symbol-box">
+                        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hand_INC.svg"
+                             onerror="this.src='images/inc-symbol.svg'"
+                             alt="INC Hand election symbol">
+                    </div>
+                    <div>
+                        <span class="party-type">NATIONAL PARTY</span>
+                        <h2>Indian National Congress</h2>
+                        <b>INC</b>
+                        <p>Election Symbol: Hand</p>
+                    </div>
+                </div>
+                <div class="select-line">Click for party information →</div>
+            </div>
+
+            <div class="party-card" data-party="aap">
+                <input type="radio" name="candidate" value="Aam Aadmi Party">
+                <div class="party-content">
+                    <div class="symbol-box">
+                        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/AAP_symbol.svg"
+                             onerror="this.src='images/aap-symbol.svg'"
+                             alt="AAP Broom election symbol">
+                    </div>
+                    <div>
+                        <span class="party-type">NATIONAL PARTY</span>
+                        <h2>Aam Aadmi Party</h2>
+                        <b>AAP</b>
+                        <p>Election Symbol: Broom</p>
+                    </div>
+                </div>
+                <div class="select-line">Click for party information →</div>
+            </div>
+
+            <div class="party-card" data-party="bsp">
+                <input type="radio" name="candidate" value="Bahujan Samaj Party">
+                <div class="party-content">
+                    <div class="symbol-box">
+                        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephant_Bahujan_Samaj_Party.svg"
+                             onerror="this.src='images/bsp-symbol.svg'"
+                             alt="BSP Elephant election symbol">
+                    </div>
+                    <div>
+                        <span class="party-type">NATIONAL PARTY</span>
+                        <h2>Bahujan Samaj Party</h2>
+                        <b>BSP</b>
+                        <p>Election Symbol: Elephant</p>
+                    </div>
+                </div>
+                <div class="select-line">Click for party information →</div>
+            </div>
+
+        </div>
+
+        <div class="vote-submit">
+            <p>Your vote will be stored in browser Local Storage for this academic demo.</p>
+            <button class="btn blue" type="submit">Submit Vote</button>
+        </div>
+    </form>
+</main>
+
+<!-- PARTY INFORMATION MODAL -->
+<div id="partyModal" class="party-modal" aria-hidden="true">
+    <div class="party-modal-box">
+        <button id="closePartyModal" class="modal-close" type="button">×</button>
+
+        <div class="modal-header">
+            <div class="modal-symbol">
+                <img id="modalLogo" src="" alt="Party symbol">
+            </div>
+            <div>
+                <span id="modalType" class="party-type">NATIONAL PARTY</span>
+                <h2 id="modalPartyName">Party Name</h2>
+                <b id="modalShortName">PARTY</b>
+            </div>
+        </div>
+
+        <div class="modal-section">
+            <h3>Key Leadership</h3>
+            <div id="modalLeaders" class="leader-grid"></div>
+        </div>
+
+        <div class="modal-section">
+            <h3>Selected Electoral Milestones</h3>
+            <div id="modalWins" class="wins-list"></div>
+            <p class="modal-note">Figures shown are historical election results, not results of this student demonstration.</p>
+        </div>
+
+        <div class="modal-actions">
+            <button id="selectPartyButton" class="btn blue" type="button">Select This Party</button>
+            <button id="closePartyButton" class="btn secondary" type="button">Close</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

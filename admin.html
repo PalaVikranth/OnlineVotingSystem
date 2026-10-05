@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - Election Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar"><span>Government of India | Online Voting Portal</span><select id="languageSelect"><option value="en">English</option><option value="hi">हिंदी</option><option value="te">తెలుగు</option></select></div>
+<header class="header"><a class="brand" href="admin.html"><span class="brand-mark">IN</span><span><strong>Election Portal</strong><small>Administration Console</small></span></a><nav><a href="admin.html">Admin Home</a><a href="result.html">Public Results</a><a href="#" id="adminLogout" class="login-button">Logout</a></nav></header><div class="tricolor-line"></div>
+<main class="admin-page">
+<section class="admin-hero"><div><span class="eyebrow">ADMINISTRATOR CONSOLE</span><h1>Election Control Centre</h1><p>Manage this academic voting demonstration from one place.</p></div><span class="admin-badge">🛡️ Admin Access</span></section>
+<section class="admin-stats"><div class="admin-stat"><span>Total Votes</span><strong id="adminTotalVotes">0</strong><small>Recorded in Local Storage</small></div><div class="admin-stat"><span>Registered Voter</span><strong id="adminVoterCount">0</strong><small>Demo accounts</small></div><div class="admin-stat"><span>Voting Status</span><strong id="adminVotingStatus">Open</strong><small>Election control</small></div><div class="admin-stat"><span>Leading Party</span><strong id="adminLeader">—</strong><small>Based on current votes</small></div></section>
+<section class="admin-grid">
+<article class="admin-card"><div class="admin-card-head"><div><span class="eyebrow">ELECTION CONTROL</span><h2>Voting Status</h2></div><span id="statusBadge" class="admin-status open">OPEN</span></div><p>Close the voting demo when the election period ends. Users will not be able to submit a vote while it is closed.</p><button id="toggleVoting" class="btn blue">Close Voting</button></article>
+<article class="admin-card"><div class="admin-card-head"><div><span class="eyebrow">RESULT MANAGEMENT</span><h2>Demo Data</h2></div><span>⚙️</span></div><p>Reset all demonstration votes and voter status. This action only changes data stored in this browser.</p><button id="resetElection" class="btn danger">Reset Election Data</button></article>
+</section>
+<section class="admin-card admin-results"><div class="admin-card-head"><div><span class="eyebrow">LIVE SUMMARY</span><h2>Party Vote Count</h2></div><a class="btn secondary" href="result.html">Open Results</a></div><div id="adminPartyRows"></div></section>
+<div class="notice admin-notice"><strong>ⓘ Administrator Note</strong><span>This is an academic prototype. Admin controls are implemented with Local Storage and are not suitable for a real election system.</span></div>
+</main><script src="script.js"></script></body></html>

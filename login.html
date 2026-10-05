@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Election Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar"><span>Government of India | Online Voting Portal</span><select id="languageSelect"><option value="en">English</option><option value="hi">हिंदी</option><option value="te">తెలుగు</option></select></div>
+<header class="header"><a class="brand" href="index.html"><span class="brand-mark">IN</span><span><strong>Election Portal</strong><small>Online Voting System</small></span></a><nav><a href="index.html">Home</a><a href="signup.html">Register</a></nav></header><div class="tricolor-line"></div>
+<main class="auth-page">
+<div class="access-shell">
+<div class="access-intro"><span class="eyebrow">SECURE ACCESS</span><h1>Choose your access mode</h1><p>Use the same portal with different permissions for voters and election administrators.</p><div class="access-points"><div><b>USER</b><span>Register, vote and view demonstration results.</span></div><div><b>ADMIN</b><span>Manage election status, view votes and reset the demo.</span></div></div></div>
+<div class="auth-card access-card">
+<div class="mode-switch"><button type="button" class="mode-btn active" data-mode="user">👤 User Login</button><button type="button" class="mode-btn" data-mode="admin">🛡️ Admin Login</button></div>
+<section id="userLoginPanel"><span class="eyebrow">VOTER LOGIN</span><h2>Welcome Back</h2><p>Login to access your voter dashboard.</p><form id="loginForm"><label>Email</label><input id="loginEmail" type="email" required placeholder="Enter your email"><label>Password</label><input id="loginPassword" type="password" required placeholder="Enter your password"><button class="btn blue full" type="submit">Login as User</button></form><p class="auth-bottom">New voter? <a href="signup.html">Create an account</a></p></section>
+<section id="adminLoginPanel" class="hidden"><span class="eyebrow">ADMIN LOGIN</span><h2>Election Administration</h2><p>Authorized demo administrator access.</p><form id="adminLoginForm"><label>Admin Email</label><input id="adminEmail" type="email" required placeholder="Enter admin email"><label>Admin Password</label><input id="adminPassword" type="password" required placeholder="Enter admin password"><button class="btn blue full" type="submit">Login as Admin</button></form><div class="demo-credentials"><b>Demo credentials</b><span>Email: admin@election.gov.in</span><span>Password: admin123</span></div></section>
+</div></div>
+</main><script src="script.js"></script></body></html>
